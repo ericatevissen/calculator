@@ -66,8 +66,12 @@ container.addEventListener('click', () => {
         operator = undefined;
         screen.innerText = "";
     }
-    else if (event.target.id === 'decimal') {
+    else if (event.target.id === 'decimal' && operator === undefined) {
         num1 += event.target.innerText;
+        screen.innerText += event.target.innerText;
+    }
+    else if (event.target.id === 'decimal' && operator !== undefined) {
+        num2 += event.target.innerText;
         screen.innerText += event.target.innerText;
     }
 });
