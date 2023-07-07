@@ -1,14 +1,18 @@
 function sum(num1, num2) {
-    return num1 + num2;
+    result = num1 + num2;
+    return Math.round(result * 100) / 100;
 }
 function substract(num1, num2) {
-    return num1 - num2;
+    result = num1 - num2;
+    return Math.round(result * 100) / 100;
 }
 function multiply(num1, num2) {
-    return num1 * num2;
+    result = num1 * num2;
+    return Math.round(result * 100) / 100;
 }
 function divide(num1, num2) {
-    return num1 / num2;
+    result = num1 / num2;
+    return Math.round(result * 100) / 100;
 }
 
 let num1 = "";
@@ -16,9 +20,9 @@ let num2 = "";
 let operator;
 
 const screen = document.querySelector('#screen')
-const buttons = document.querySelector('#buttons');
+const container = document.querySelector('#container');
 
-buttons.addEventListener('click', () => {
+container.addEventListener('click', () => {
     if (event.target.classList.contains('digit') && typeof operator === 'undefined') {
         const digit = event.target.innerText;
         num1 += digit;
@@ -39,6 +43,7 @@ buttons.addEventListener('click', () => {
 
         switch (operator) {
             case '/':
+                if (num2 === 0) alert("You can't divide by 0");
                 screen.innerText = divide(num1, num2);
                 break;
             case 'x':
@@ -54,5 +59,11 @@ buttons.addEventListener('click', () => {
         num1 = screen.innerText;
         num2 = "";
         operator = undefined;
+    }
+    else if (event.target.id === 'clear') {
+        num1 = "";
+        num2 = "";
+        operator = undefined;
+        screen.innerText = "";
     }
 });

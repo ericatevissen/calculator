@@ -5,7 +5,7 @@
     width: 360px;
     height: 500px;
     background-color: rgb(47, 54, 47);
-    border-radius: 10px;
+    border-radius: 12px;
 }
 #screen {
     display: flex;
@@ -33,11 +33,18 @@
 #decimal {
     background-color: #66CCFF;
 }
+#clear {
+    margin: 10px;
+    width: 160px;
+    background-color: #FF4136;
+    color: #FFFFFF;
+}
 button {
     width: 75px;
     height: 70px;
     font-size: 40px;
     border-radius: 8px;
+    border-style: solid;
 }
 
 body {
