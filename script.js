@@ -33,7 +33,7 @@ buttons.addEventListener('click', () => {
         operator = event.target.innerText
         screen.innerText += operator
     }
-    else if (event.target.id === 'equals' || event.target.classList.contains('operator') && num2.length !== 0) {
+    else if (event.target.id === 'equal' || event.target.classList.contains('operator') && num2.length !== 0) {
         num1 = Number(num1);
         num2 = Number(num2);
 
