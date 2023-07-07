@@ -66,11 +66,11 @@ container.addEventListener('click', () => {
         operator = undefined;
         screen.innerText = "";
     }
-    else if (event.target.id === 'decimal' && operator === undefined) {
+    else if (event.target.id === 'decimal' && operator === undefined && !num1.includes(".")) {
         num1 += event.target.innerText;
         screen.innerText += event.target.innerText;
     }
-    else if (event.target.id === 'decimal' && operator !== undefined) {
+    else if (event.target.id === 'decimal' && operator !== undefined && !num2.includes(".")) {
         num2 += event.target.innerText;
         screen.innerText += event.target.innerText;
     }
